@@ -4,6 +4,7 @@ on:
         workflows: "React CI/CD"
         types: 
             - completed
+    workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,13 +20,6 @@ jobs:
         
       - name: "setup vercal CLI"
         run: npm i -g vercel 
-
-      - name: "Download build artifact"
-        uses: actions/download-artifact@v4
-        with:
-            name: build
-            run-id: ${{ github.event.workspace_run.id }}
-            github-token: ${{ github.token }}
 
       - name: "Deploy to Vercel"
         run: vercel --prod --token=${{ secrets.Vercel_Token }} -- confirm
