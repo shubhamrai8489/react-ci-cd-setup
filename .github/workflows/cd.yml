@@ -22,5 +22,5 @@ jobs:
         run: npm i -g vercel 
 
       - name: "Deploy to Vercel"
-        run: vercel --prod --token=${{ secrets.Vercel_Token }} -- confirm
+        run: vercel --prod --token=${{ secrets.Vercel_Token }} --confirm
           
