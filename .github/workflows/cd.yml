@@ -21,7 +21,7 @@ jobs:
       - name: "setup vercal CLI"
         run: npm i -g vercel 
 
-        -name: "Downlord build files"
+      - name: "Downlord build files"
         uses: actions/download-artifact@v4
         with:
             name: build
