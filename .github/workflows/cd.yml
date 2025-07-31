@@ -24,8 +24,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
             name: build-artifact
-      - name: build
-        run: ${{ github.event.workspace_run.id }}
+            run-id: ${{ github.event.workspace_run.id }}
+            github-token: ${{ github.token }}
 
       - name: "Deploy to Vercel"
         run: vercel --prod --token=${{ secrets.Vercel_Token }} -- confirm
