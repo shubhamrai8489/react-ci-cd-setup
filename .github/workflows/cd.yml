@@ -28,6 +28,7 @@ jobs:
             run-id: ${{ github.event.workflow_run.id }}
             github-token: ${{ github.token }}
 
-      - name: "Deploy to Vercel"
-        run: vercel --prod --token=${{ secrets.Vercel_Token }} --confirm
+      - name: Deploy to Vercel
+        run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm
+
           
